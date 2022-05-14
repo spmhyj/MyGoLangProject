@@ -3,6 +3,7 @@ package hello
 import (
 	"fmt"
 	"math"
+	"path"
 	"testing"
 )
 
@@ -11,6 +12,14 @@ const (
 	def
 	ghi
 )
+
+func Test_pathSplit(t *testing.T) {
+	t.Helper()
+	lpath := `C:/workspaces/LearnGo/project7/src/hello.go`
+
+	dir, file := path.Split(lpath)
+	fmt.Printf("dir[%s] - file[%s]", dir, file)
+}
 
 func Test_rscHello(t *testing.T) {
 	sayHello()
